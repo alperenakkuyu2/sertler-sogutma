@@ -1,36 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="tr">
-
 <head>
-  <meta charset="UTF-8" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGLB0VNHX7"></script>
-  <script>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QGLB0VNHX7"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-QGLB0VNHX7');
     gtag('config', 'G-VT4H4HCYVE');
   </script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog – Teknik Servis Rehberi | Sertler Soğutma</title>
-  <meta name="description"
-    content="Sertler Soğutma blogu: Tarsus'ta beyaz eşya ve klima servisinde arıza, bakım ve doğru servis seçimi hakkında uzman rehberleri." />
-  <link rel="canonical" href="https://www.sertlersogutma.com.tr/blog/" />
-  <link rel="icon" href="https://www.sertlersogutma.com.tr/images/favicon5.webp" type="image/png" sizes="512x512">
-  <link rel="apple-touch-icon" href="https://www.sertlersogutma.com.tr/images/favicon5.webp">
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Blog – Teknik Servis Rehberi | Sertler Soğutma" />
-  <meta property="og:description"
-    content="Beyaz eşya ve klima servisinde uzman rehberleri: arıza, bakım, tamir ve doğru servis seçimi." />
-  <meta property="og:url" content="https://www.sertlersogutma.com.tr/blog/" />
-  <meta property="og:locale" content="tr_TR" />
-  <meta property="og:site_name" content="Sertler Soğutma Teknik Servis" />
-
-  <script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog – Teknik Servis Rehberi | Sertler Soğutma</title>
+<meta content="Sertler Soğutma blogu: Tarsus'ta beyaz eşya ve klima servisinde arıza, bakım ve doğru servis seçimi hakkında uzman rehberleri." name="description"/>
+<link href="https://www.sertlersogutma.com.tr/blog/" rel="canonical"/>
+<link href="https://www.sertlersogutma.com.tr/images/favicon5.webp" rel="icon" sizes="512x512" type="image/png"/>
+<link href="https://www.sertlersogutma.com.tr/images/favicon5.webp" rel="apple-touch-icon"/>
+<meta content="website" property="og:type"/>
+<meta content="Blog – Teknik Servis Rehberi | Sertler Soğutma" property="og:title"/>
+<meta content="Beyaz eşya ve klima servisinde uzman rehberleri: arıza, bakım, tamir ve doğru servis seçimi." property="og:description"/>
+<meta content="https://www.sertlersogutma.com.tr/blog/" property="og:url"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="Sertler Soğutma Teknik Servis" property="og:site_name"/>
+<script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
@@ -40,12 +34,9 @@
       }
     })();
   </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -354,6 +345,17 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+    @media (max-width: 768px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .card {
       background: var(--white);
@@ -425,6 +427,11 @@
       font-weight: 900;
       line-height: 1.3;
       min-height: 40px;
+      color: #1e3a8a; /* Şık ve profesyonel mavi/lacivert tonu */
+      transition: color .2s;
+    }
+    .card:hover .card-body h3 {
+      color: var(--ice);
     }
 
     .card-body p {
@@ -671,7 +678,7 @@
       color: white !important;
     }
   </style>
-  <script>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
         link.addEventListener('click', function() {
@@ -686,374 +693,490 @@
     });
   </script>
 </head>
-
 <body>
-  <!-- NAVBAR -->
-  <nav id="navbar">
-    <a href="../index.html" class="nav-logo">
-      <div class="nav-logo-icon"><i class="fa-solid fa-snowflake"></i></div>
-      <div class="nav-logo-text">
-        <span>Sertler Soğutma</span>
-        <span>Teknik Servis</span>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="../index.html#hizmetler">Hizmetler</a></li>
-      <li><a href="../index.html#markalar">Markalar</a></li>
-      <li><a href="../index.html#neden-biz">Neden Biz?</a></li>
-      <li><a href="klima-btu-hesaplama.html" class="btn-calc-nav"><i class="fa-solid fa-calculator"></i> BTU Hesapla</a></li>
-      <li><a href="index.html">Blog</a></li>
-      <li><a href="../index.html#iletisim">İletişim</a></li>
-      <li><a href="#" id="darkModeToggle" class="dark-mode-toggle"><i class="fa-solid fa-moon"
-            style="font-size:16px;"></i></a></li>
-      <li><a href="tel:+905305753253" class="nav-cta"><i class="fa-solid fa-phone"></i> 0530 575 32 53</a></li>
-    </ul>
-    <div class="mobile-nav-actions">
-      <a href="klima-btu-hesaplama.html" class="btn-calc-nav" style="padding:6px 12px; font-size:13px;"><i class="fa-solid fa-calculator"></i></a>
-      <a href="#" id="mobileHeaderDarkModeToggle" class="mobile-dark-toggle"><i class="fa-solid fa-moon"></i></a>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="../index.html#hizmetler" onclick="toggleMenu()">Hizmetler</a>
-    <a href="../index.html#markalar" onclick="toggleMenu()">Markalar</a>
-    <a href="../index.html#neden-biz" onclick="toggleMenu()">Neden Biz?</a>
-    <a href="klima-btu-hesaplama.html" onclick="toggleMenu()" style="color:var(--ice-dark);"><i class="fa-solid fa-calculator"></i> BTU Hesapla</a>
-    <a href="index.html" onclick="toggleMenu()">Blog</a>
-    <a href="../index.html#iletisim" onclick="toggleMenu()">İletişim</a>
-    <a href="tel:+905305753253" style="color:var(--ice);font-weight:900;" onclick="toggleMenu()"><i
-        class="fa-solid fa-phone"></i> 0530 575 32 53</a>
-  </div>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="tag"><i class="fa-solid fa-book"></i> Teknik Rehber</div>
-        <h1>Uzman bilgi,<br>güvenilir içerik</h1>
-        <p>Tarsus’ta beyaz eşya ve klima servisinde doğru servis seçimi, arıza belirtileri, bakım ipuçları ve
+<!-- NAVBAR -->
+<nav id="navbar">
+<a class="nav-logo" href="../index.html">
+<div class="nav-logo-icon"><i class="fa-solid fa-snowflake"></i></div>
+<div class="nav-logo-text">
+<span>Sertler Soğutma</span>
+<span>Teknik Servis</span>
+</div>
+</a>
+<ul class="nav-links">
+<li><a href="../index.html#hizmetler">Hizmetler</a></li>
+<li><a href="../index.html#markalar">Markalar</a></li>
+<li><a href="../index.html#neden-biz">Neden Biz?</a></li>
+<li><a class="btn-calc-nav" href="klima-btu-hesaplama.html"><i class="fa-solid fa-calculator"></i> BTU Hesapla</a></li>
+<li><a href="index.html">Blog</a></li>
+<li><a href="../index.html#iletisim">İletişim</a></li>
+<li><a class="dark-mode-toggle" href="#" id="darkModeToggle"><i class="fa-solid fa-moon" style="font-size:16px;"></i></a></li>
+<li><a class="nav-cta" href="tel:+905305753253"><i class="fa-solid fa-phone"></i> 0530 575 32 53</a></li>
+</ul>
+<div class="mobile-nav-actions">
+<a class="btn-calc-nav" href="klima-btu-hesaplama.html" style="padding:6px 12px; font-size:13px;"><i class="fa-solid fa-calculator"></i></a>
+<a class="mobile-dark-toggle" href="#" id="mobileHeaderDarkModeToggle"><i class="fa-solid fa-moon"></i></a>
+<div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</div>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+<a href="../index.html#hizmetler" onclick="toggleMenu()">Hizmetler</a>
+<a href="../index.html#markalar" onclick="toggleMenu()">Markalar</a>
+<a href="../index.html#neden-biz" onclick="toggleMenu()">Neden Biz?</a>
+<a href="klima-btu-hesaplama.html" onclick="toggleMenu()" style="color:var(--ice-dark);"><i class="fa-solid fa-calculator"></i> BTU Hesapla</a>
+<a href="index.html" onclick="toggleMenu()">Blog</a>
+<a href="../index.html#iletisim" onclick="toggleMenu()">İletişim</a>
+<a href="tel:+905305753253" onclick="toggleMenu()" style="color:var(--ice);font-weight:900;"><i class="fa-solid fa-phone"></i> 0530 575 32 53</a>
+</div>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-inner">
+<div>
+<div class="tag"><i class="fa-solid fa-book"></i> Teknik Rehber</div>
+<h1>Uzman bilgi,<br/>güvenilir içerik</h1>
+<p>Tarsus’ta beyaz eşya ve klima servisinde doğru servis seçimi, arıza belirtileri, bakım ipuçları ve
           profesyonel
           çözümler.</p>
-      </div>
-      <div class="hero-stat">
-        <strong>Durum</strong>
-        <span>Şu an <b>14 yazı yayında</b>. Diğer rehberleri sırayla ekliyoruz.</span>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="section-head">
-        <h2>Tüm yazılar</h2>
-
-      </div>
-
-      <div class="grid">
-        <!-- BTU Hesaplama -->
-        <a href="klima-btu-hesaplama.html" class="card" style="border-color: var(--ice); box-shadow: var(--shadow);">
-          <div class="card-img" style="background: linear-gradient(135deg, var(--ice), var(--ice-dark)); display:flex; align-items:center; justify-content:center; color:white; font-size:62px;">
-            <i class="fa-solid fa-calculator"></i>
-            <span class="badge" style="background:var(--white); color:var(--ice-dark);">Uygulama</span>
-          </div>
-          <div class="card-body">
-            <h3 style="color:var(--ice-dark);">Klima BTU Kapasite Hesaplama Aracı</h3>
-            <p>Odanızın boyutuna ve bölgesel şartlara göre en ideal klima kapasitesini (BTU) anında öğrenin.</p>
-            <div class="card-meta">
-              <span><i class="fa-solid fa-fire-burner"></i> Popüler</span>
-              <span>Hesapla <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Elektrik Tüketimi Hesaplama -->
-        <a href="klima-elektrik-tuketim-hesaplama.html" class="card" style="border-color: var(--anthracite); box-shadow: var(--shadow);">
-          <div class="card-img" style="background: linear-gradient(135deg, var(--anthracite), #1a1a1a); display:flex; align-items:center; justify-content:center; color:white; font-size:62px;">
-            <i class="fa-solid fa-bolt-lightning"></i>
-            <span class="badge" style="background:var(--ivory); color:var(--anthracite);">Simülatör</span>
-          </div>
-          <div class="card-body">
-            <h3 style="color:var(--anthracite);">Elektrik Tüketim ve Tasarruf Simülatörü</h3>
-            <p>Eski klimanız ile yeni nesil A+++ inverter klimaların faturaya etkisini karşılaştırın.</p>
-            <div class="card-meta">
-              <span><i class="fa-solid fa-leaf" style="color:#2ecc71;"></i> Tasarruf</span>
-              <span>Hesapla <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Yeni Yazı -->
-        <a href="tarsus-klimam-sogutmuyor.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-klima-sogutmuyor-1.webp" alt="Klima neden soğutmaz ve evde pratik çözümler"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>images/blog/tarsus-klima-sogutmuyor-1.webp</div>'" />
-            <span class="badge">Klima</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus'ta Klimanız Çalışıyor Ama Soğutmuyor mu? Nedenleri ve Hızlı Çözümü</h3>
-            <p>Klima neden soğutmaz? Evde yapılabilecek pratik kontroller ve Sertler Soğutma profesyonel tamir çözümleri.</p>
-            <div class="card-meta">
-              <span><i class="fa-regular fa-calendar"></i> 6 Nis 2026</span>
-              <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-                <!-- Yeni Yazı -->
-        <a href="tarsus-klima-su-damlatiyor.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/klima-su-damlatiyor-1.webp" alt="Klimanız iç üniteden su damlatıyor veya su mu akıt"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>images/blog/klima-su-damlatiyor-1.webp</div>'" />
-            <span class="badge">Klima Tamir</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Klima Su Akıtıyor (İç Üniteden Damlama) Nedenleri</h3>
-            <p>Klimanız iç üniteden su damlatıyor veya su mu akıtıyor? Tarsus klima su akıtıyor arızaları ve evde yapabileceğiniz prati</p>
-            <div class="card-meta">
-              <span><i class="fa-regular fa-calendar"></i> 6 Nisan 2026</span>
-              <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 1 -->
-        <a href="tarsus-beyaz-esya-servisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" alt="Tarsus beyaz eşya servisi" />
-            <span class="badge">Beyaz Eşya</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Beyaz Eşya Servisi: Profesyonel Çözümler</h3>
-            <p>Garanti, orijinal parça, hızlı servis ve uzun ömürlü kullanım için kapsamlı rehber.</p>
-            <div class="card-meta">
-              <span><i class="fa-regular fa-calendar"></i> 1 Haz 2025</span>
-              <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 2 -->
-        <a href="tarsus-beyaz-esya-tamircisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-beyaz-esya-tamircisi-1.webp" alt="Tarsus beyaz eşya tamircisi" />
-            <span class="badge">Beyaz Eşya</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Beyaz Eşya Tamircisi: Arızalar Sizi Korkutmasın</h3>
-            <p>Arıza belirtileri, doğru servis seçimi ve hızlı müdahale için pratik öneriler.</p>
-            <div class="card-meta">
-              <span><i class="fa-regular fa-calendar"></i> 15 Haz 2025</span>
-              <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 3 -->
-        <a href="tarsus-camasir-makinesi-servisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-camasir-makinesi-servisi-1.webp" alt="Tarsus çamaşır makinesi servisi" />
-            <span class="badge">Çamaşır</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Çamaşır Makinesi Servisi: Profesyonel Çözümler</h3>
-            <p>Bakım, arıza tespiti ve hızlı servis ile daha verimli ve uzun ömürlü kullanım.</p>
-            <div class="card-meta">
-              <span><i class="fa-regular fa-calendar"></i> 1 Tem 2025</span>
-              <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 4 -->
-        <a href="tarsus-camasir-makinesi-tamircisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-camasir-makinesi-tamircisi-1.webp" alt="Tarsus çamaşır makinesi tamircisi"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-camasir-makinesi-tamircisi-1.webp<br>Alt metin: Tarsus çamaşır makinesi tamircisi</div>'" />
-            <span class="badge">Çamaşır</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Çamaşır Makinesi Tamircisi: Titreşim ve Gürültüye Son</h3>
-            <p>Rulman, amortisör, kazan ve elektronik arızalarda garantili onarım ve hızlı servis.</p>
-            <div class="card-meta">
-              <span><i class="fa-regular fa-calendar"></i> 2 Nis 2026</span>
-              <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 5 (docx: Tarsus Bulaşık Makinesi Servisi) -->
-        <a href="tarsus-bulasik-makinesi-servisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-bulasik-makinesi-servisi-1.webp" alt="Tarsus bulaşık makinesi servisi"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-bulasik-makinesi-servisi-1.webp<br>Alt metin: Tarsus bulaşık makinesi servisi</div>'" />
-            <span class="badge">Bulaşık</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Bulaşık Makinesi Servisi</h3>
-            <p>Isıtmıyor, su almıyor, lekeli bırakıyor mu? Arıza nedenleri ve servis rehberi.</p>
-            <div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i
-                  class="fa-solid fa-arrow-right"></i></span></div>
-          </div>
-        </a>
-
-        <!-- 6 (docx: Tarsus Bulaşık Makinesi Tamircisi) -->
-        <a class="card" href="tarsus-bulasik-makinesi-tamircisi.html">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-bulasik-makinesi-tamircisi-1.webp" alt="Tarsus bulaşık makinesi tamircisi"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-bulasik-makinesi-tamircisi-1.webp<br>Alt metin: Tarsus bulaşık makinesi tamircisi</div>'" />
-            <span class="badge">Bulaşık</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Bulaşık Makinesi Tamircisi</h3>
-            <p>Pompa, rezistans, fıskiye ve kart arızalarında uzman tamir ve garantili işçilik.</p>
-            <div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i
-                  class="fa-solid fa-arrow-right"></i></span></div>
-          </div>
-        </a>
-
-        <!-- 7 (docx: Tarsus Buzdolabı Servisi) -->
-        <a href="tarsus-buzdolabi-servisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-buzdolabi-servisi-1.webp" alt="Tarsus buzdolabı servisi"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-buzdolabi-servisi-1.webp<br>Alt metin: Tarsus buzdolabı servisi</div>'" />
-            <span class="badge">Buzdolabı</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Buzdolabı Servisi</h3>
-            <p>Soğutmuyor, buzlanma yapıyor, sesli çalışıyor mu? Servis ve bakım rehberi.</p>
-            <div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i
-                  class="fa-solid fa-arrow-right"></i></span></div>
-          </div>
-        </a>
-
-        <!-- 8 (docx: Tarsus Buzdolabı Tamircisi) -->
-        <a href="tarsus-buzdolabi-tamircisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-buzdolabi-tamircisi-1.webp" alt="Tarsus buzdolabı tamircisi"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-buzdolabi-tamircisi-1.webp<br>Alt metin: Tarsus buzdolabı tamircisi</div>'" />
-            <span class="badge">Buzdolabı</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Buzdolabı Tamircisi</h3>
-            <p>Gaz kaçağı, fan, termostat ve kart problemlerinde hızlı tamir ve garantili çözüm.</p>
-            <div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i
-                  class="fa-solid fa-arrow-right"></i></span></div>
-          </div>
-        </a>
-
-        <!-- 9 (docx: Tarsus Klima Bakım) -->
-        <a href="tarsus-klima-bakim.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-klima-bakim-1.webp" alt="Tarsus klima bakım"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-klima-bakim-1.webp<br>Alt metin: Tarsus klima bakım</div>'" />
-            <span class="badge">Klima</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Klima Bakım</h3>
-            <p>Filtre temizliği, performans artışı ve enerji tasarrufu için bakım zamanları ve süreç.</p>
-            <div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i
-                  class="fa-solid fa-arrow-right"></i></span></div>
-          </div>
-        </a>
-
-        <!-- 10 (docx: Tarsus Klima Montaj) -->
-        <a href="tarsus-klima-montaj.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-klima-montaj-1.webp" alt="Tarsus klima montaj"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-klima-montaj-1.webp<br>Alt metin: Tarsus klima montaj</div>'" />
-            <span class="badge">Klima</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Klima Montaj</h3>
-            <p>Doğru konumlandırma, drenaj, vakum ve güvenli kurulum için kontrol listesi.</p>
-            <div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i
-                  class="fa-solid fa-arrow-right"></i></span></div>
-          </div>
-        </a>
-
-        <!-- 11 (docx: Tarsus Klima Servisi) -->
-        <a href="tarsus-klima-servisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-klima-servisi-1.webp" alt="Tarsus klima servisi"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-klima-servisi-1.webp<br>Alt metin: Tarsus klima servisi</div>'" />
-            <span class="badge">Klima</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Klima Servisi</h3>
-            <p>Soğutmuyor/ısıtmıyor mu? Servis, bakım ve gaz dolumu süreçleri için rehber.</p>
-            <div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i
-                  class="fa-solid fa-arrow-right"></i></span></div>
-          </div>
-        </a>
-
-        <!-- 12 (docx: Tarsus Klima Tamircisi) -->
-        <a href="tarsus-klima-tamircisi.html" class="card">
-          <div class="card-img">
-            <img src="../images/blog/tarsus-klima-tamircisi-1.webp" alt="Tarsus klima tamircisi"
-              onerror="this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;>[BURAYA_RESİM_EKLE]<br>Önerilen: images/blog/tarsus-klima-tamircisi-1.webp<br>Alt metin: Tarsus klima tamircisi</div>'" />
-            <span class="badge">Klima</span>
-          </div>
-          <div class="card-body">
-            <h3>Tarsus Klima Tamircisi</h3>
-            <p>Kart, fan, sensör ve kompresör arızalarında garantili onarım ve hızlı müdahale.</p>
-            <div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i
-                  class="fa-solid fa-arrow-right"></i></span></div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <div class="footer-logo">
-              <div class="footer-logo-icon"><i class="fa-solid fa-snowflake" style="color:white;font-size:20px;"></i>
-              </div>
-              <div class="footer-logo-text"><span>Sertler Soğutma</span><span>Teknik Servis</span></div>
-            </div>
-            <p>Her arızaya hızlı çözüm, her markaya uzman servis. Tarsus ve çevresinde güvenilir teknik servis
+</div>
+<div class="hero-stat">
+<strong>Durum</strong>
+<span>Şu an <b>26 yazı yayında</b>. Diğer rehberleri sırayla ekliyoruz.</span>
+</div>
+</div>
+<div class="container">
+<div class="section-head" style="margin-bottom: 16px;">
+<h2>Hesaplama Araçları</h2>
+<small>İnteraktif Araçlar</small>
+</div>
+<div class="tools-grid">
+<a class="card" href="klima-btu-hesaplama.html" style="border-color: var(--ice); box-shadow: var(--shadow);">
+<div class="card-img" style="background: linear-gradient(135deg, var(--ice), var(--ice-dark)); display:flex; align-items:center; justify-content:center; color:white; font-size:62px;">
+<i class="fa-solid fa-calculator"></i>
+<span class="badge" style="background:var(--white); color:var(--ice-dark);">Uygulama</span>
+</div>
+<div class="card-body" style="min-height: auto;">
+<h3 style="color:var(--ice-dark);">Klima BTU Kapasite Hesaplama Aracı</h3>
+<p>Odanızın boyutuna ve bölgesel şartlara göre en ideal klima kapasitesini (BTU) anında öğrenin.</p>
+<div class="card-meta">
+<span><i class="fa-solid fa-fire-burner"></i> Popüler</span>
+<span>Hesapla <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+<a class="card" href="klima-elektrik-tuketim-hesaplama.html" style="border-color: var(--anthracite); box-shadow: var(--shadow);">
+<div class="card-img" style="background: linear-gradient(135deg, var(--anthracite), #1a1a1a); display:flex; align-items:center; justify-content:center; color:white; font-size:62px;">
+<i class="fa-solid fa-bolt-lightning"></i>
+<span class="badge" style="background:var(--ivory); color:var(--anthracite);">Simülatör</span>
+</div>
+<div class="card-body" style="min-height: auto;">
+<h3 style="color:var(--anthracite);">Elektrik Tüketim ve Tasarruf Simülatörü</h3>
+<p>Eski klimanız ile yeni nesil A+++ inverter klimaların faturaya etkisini karşılaştırın.</p>
+<div class="card-meta">
+<span><i class="fa-solid fa-leaf" style="color:#2ecc71;"></i> Tasarruf</span>
+<span>Hesapla <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+</div>
+<div class="section-head" style="margin-top: 40px; margin-bottom: 16px;">
+<h2>Tüm Rehberler &amp; Blog Yazıları</h2>
+<small>Faydalı Bilgiler</small>
+</div>
+<div class="grid"><a class="card" href="tarsus-hitachi-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Hitachi Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-hitachi-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-hitachi-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Hitachi Klima Servisi</h3>
+<p>Hitachi klimalar için balans ayarlı fan temizliği ve uzun ömürlü kompresör bakımı.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-gree-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Gree Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-gree-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-gree-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Gree Klima Servisi</h3>
+<p>Gree klimalarda çevre dostu gaz şarjı, sızıntı kontrolü ve verimli çalışma garantisi.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-general-electric-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus General Electric Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-general-electric-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-general-electric-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus General Electric Klima Servisi</h3>
+<p>General electric klimaların arıza onarımında 7/24 nöbetçi acil teknik servis desteği.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-fujitsu-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Fujitsu Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-fujitsu-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-fujitsu-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Fujitsu Klima Servisi</h3>
+<p>Fujitsu klimanızın enerji tüketimini düşüren periyodik bakım ve garantili motor tamiri.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-demirdokum-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Demirdöküm Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-demirdokum-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-demirdokum-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Demirdöküm Klima Servisi</h3>
+<p>Demirdöküm klima bakım, gaz dolumu ve montaj işlemlerinde Tarsus'un en hızlı servis ağı.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-daylux-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Daylux Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-daylux-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-daylux-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Daylux Klima Servisi</h3>
+<p>Daylux klimanızda su akıtma, yetersiz üfleme gibi tüm arızalara profesyonel müdahale.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-daikin-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Daikin Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-daikin-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-daikin-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Daikin Klima Servisi</h3>
+<p>Daikin inverter klimalarda performans artırıcı filtre bakımı ve elektronik kart onarımı.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-bosch-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Bosch Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-bosch-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-bosch-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Bosch Klima Servisi</h3>
+<p>Bosch klimanızın ömrünü uzatacak ileri düzey bakım ve donanımlı arıza onarım hizmeti.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-beko-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Beko Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-beko-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-beko-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Beko Klima Servisi</h3>
+<p>Beko klimalarda kesintisiz serinlik, periyodik bakım ve 1 yıl garantili orijinal yedek parça.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-baymak-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Baymak Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-baymak-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-baymak-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Baymak Klima Servisi</h3>
+<p>Baymak klima bakım, montaj, arıza ve gaz şarjı işlemlerinde hızlı ve garantili çözümler.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-arcelik-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Arçelik Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-arcelik-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-arcelik-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Arçelik Klima Servisi</h3>
+<p>Arçelik klimanızın montaj, periyodik bakım and arıza onarımlarında uzman teknik servis.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a><a class="card" href="tarsus-altus-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus Altus Klima Servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-altus-klima-servisi-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-altus-klima-servisi-1.webp"/>
+<span class="badge">Klima Servisi</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Altus Klima Servisi</h3>
+<p>Altus klimalarınızda yüksek performans, profesyonel bakım ve orijinal parça garantili onarım.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+<!-- Hesaplama araçları yukarıdaki özel bölüme taşınmıştır -->
+<!-- Yeni Yazı -->
+<a class="card" href="tarsus-klimam-sogutmuyor.html">
+<div class="card-img">
+<img alt="Klima neden soğutmaz ve evde pratik çözümler" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/tarsus-klima-sogutmuyor-1.webp&lt;/div&gt;'" src="../images/blog/tarsus-klima-sogutmuyor-1.webp"/>
+<span class="badge">Klima</span>
+</div>
+<div class="card-body">
+<h3>Tarsus'ta Klimanız Çalışıyor Ama Soğutmuyor mu? Nedenleri ve Hızlı Çözümü</h3>
+<p>Klima neden soğutmaz? Evde yapılabilecek pratik kontroller ve Sertler Soğutma profesyonel tamir çözümleri.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 6 Nis 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+<!-- Yeni Yazı -->
+<a class="card" href="tarsus-klima-su-damlatiyor.html">
+<div class="card-img">
+<img alt="Klimanız iç üniteden su damlatıyor veya su mu akıt" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;images/blog/klima-su-damlatiyor-1.webp&lt;/div&gt;'" src="../images/blog/klima-su-damlatiyor-1.webp"/>
+<span class="badge">Klima Tamir</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Klima Su Akıtıyor (İç Üniteden Damlama) Nedenleri</h3>
+<p>Klimanız iç üniteden su damlatıyor veya su mu akıtıyor? Tarsus klima su akıtıyor arızaları ve evde yapabileceğiniz prati</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 6 Nisan 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+<!-- 1 -->
+<a class="card" href="tarsus-beyaz-esya-servisi.html">
+<div class="card-img">
+<img alt="Tarsus beyaz eşya servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp"/>
+<span class="badge">Beyaz Eşya</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Beyaz Eşya Servisi: Profesyonel Çözümler</h3>
+<p>Garanti, orijinal parça, hızlı servis ve uzun ömürlü kullanım için kapsamlı rehber.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 1 Haz 2025</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+<!-- 2 -->
+<a class="card" href="tarsus-beyaz-esya-tamircisi.html">
+<div class="card-img">
+<img alt="Tarsus beyaz eşya tamircisi" src="../images/blog/tarsus-beyaz-esya-tamircisi-1.webp"/>
+<span class="badge">Beyaz Eşya</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Beyaz Eşya Tamircisi: Arızalar Sizi Korkutmasın</h3>
+<p>Arıza belirtileri, doğru servis seçimi ve hızlı müdahale için pratik öneriler.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 15 Haz 2025</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+<!-- 3 -->
+<a class="card" href="tarsus-camasir-makinesi-servisi.html">
+<div class="card-img">
+<img alt="Tarsus çamaşır makinesi servisi" src="../images/blog/tarsus-camasir-makinesi-servisi-1.webp"/>
+<span class="badge">Çamaşır</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Çamaşır Makinesi Servisi: Profesyonel Çözümler</h3>
+<p>Bakım, arıza tespiti ve hızlı servis ile daha verimli ve uzun ömürlü kullanım.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 1 Tem 2025</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+<!-- 4 -->
+<a class="card" href="tarsus-camasir-makinesi-tamircisi.html">
+<div class="card-img">
+<img alt="Tarsus çamaşır makinesi tamircisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-camasir-makinesi-tamircisi-1.webp&lt;br&gt;Alt metin: Tarsus çamaşır makinesi tamircisi&lt;/div&gt;'" src="../images/blog/tarsus-camasir-makinesi-tamircisi-1.webp"/>
+<span class="badge">Çamaşır</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Çamaşır Makinesi Tamircisi: Titreşim ve Gürültüye Son</h3>
+<p>Rulman, amortisör, kazan ve elektronik arızalarda garantili onarım ve hızlı servis.</p>
+<div class="card-meta">
+<span><i class="fa-regular fa-calendar"></i> 2 Nis 2026</span>
+<span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</a>
+<!-- 5 (docx: Tarsus Bulaşık Makinesi Servisi) -->
+<a class="card" href="tarsus-bulasik-makinesi-servisi.html">
+<div class="card-img">
+<img alt="Tarsus bulaşık makinesi servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-bulasik-makinesi-servisi-1.webp&lt;br&gt;Alt metin: Tarsus bulaşık makinesi servisi&lt;/div&gt;'" src="../images/blog/tarsus-bulasik-makinesi-servisi-1.webp"/>
+<span class="badge">Bulaşık</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Bulaşık Makinesi Servisi</h3>
+<p>Isıtmıyor, su almıyor, lekeli bırakıyor mu? Arıza nedenleri ve servis rehberi.</p>
+<div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+</a>
+<!-- 6 (docx: Tarsus Bulaşık Makinesi Tamircisi) -->
+<a class="card" href="tarsus-bulasik-makinesi-tamircisi.html">
+<div class="card-img">
+<img alt="Tarsus bulaşık makinesi tamircisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-bulasik-makinesi-tamircisi-1.webp&lt;br&gt;Alt metin: Tarsus bulaşık makinesi tamircisi&lt;/div&gt;'" src="../images/blog/tarsus-bulasik-makinesi-tamircisi-1.webp"/>
+<span class="badge">Bulaşık</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Bulaşık Makinesi Tamircisi</h3>
+<p>Pompa, rezistans, fıskiye ve kart arızalarında uzman tamir ve garantili işçilik.</p>
+<div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+</a>
+<!-- 7 (docx: Tarsus Buzdolabı Servisi) -->
+<a class="card" href="tarsus-buzdolabi-servisi.html">
+<div class="card-img">
+<img alt="Tarsus buzdolabı servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-buzdolabi-servisi-1.webp&lt;br&gt;Alt metin: Tarsus buzdolabı servisi&lt;/div&gt;'" src="../images/blog/tarsus-buzdolabi-servisi-1.webp"/>
+<span class="badge">Buzdolabı</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Buzdolabı Servisi</h3>
+<p>Soğutmuyor, buzlanma yapıyor, sesli çalışıyor mu? Servis ve bakım rehberi.</p>
+<div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+</a>
+<!-- 8 (docx: Tarsus Buzdolabı Tamircisi) -->
+<a class="card" href="tarsus-buzdolabi-tamircisi.html">
+<div class="card-img">
+<img alt="Tarsus buzdolabı tamircisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-buzdolabi-tamircisi-1.webp&lt;br&gt;Alt metin: Tarsus buzdolabı tamircisi&lt;/div&gt;'" src="../images/blog/tarsus-buzdolabi-tamircisi-1.webp"/>
+<span class="badge">Buzdolabı</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Buzdolabı Tamircisi</h3>
+<p>Gaz kaçağı, fan, termostat ve kart problemlerinde hızlı tamir ve garantili çözüm.</p>
+<div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+</a>
+<!-- 9 (docx: Tarsus Klima Bakım) -->
+<a class="card" href="tarsus-klima-bakim.html">
+<div class="card-img">
+<img alt="Tarsus klima bakım" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-klima-bakim-1.webp&lt;br&gt;Alt metin: Tarsus klima bakım&lt;/div&gt;'" src="../images/blog/tarsus-klima-bakim-1.webp"/>
+<span class="badge">Klima</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Klima Bakım</h3>
+<p>Filtre temizliği, performans artışı ve enerji tasarrufu için bakım zamanları ve süreç.</p>
+<div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+</a>
+<!-- 10 (docx: Tarsus Klima Montaj) -->
+<a class="card" href="tarsus-klima-montaj.html">
+<div class="card-img">
+<img alt="Tarsus klima montaj" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-klima-montaj-1.webp&lt;br&gt;Alt metin: Tarsus klima montaj&lt;/div&gt;'" src="../images/blog/tarsus-klima-montaj-1.webp"/>
+<span class="badge">Klima</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Klima Montaj</h3>
+<p>Doğru konumlandırma, drenaj, vakum ve güvenli kurulum için kontrol listesi.</p>
+<div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+</a>
+<!-- 11 (docx: Tarsus Klima Servisi) -->
+<a class="card" href="tarsus-klima-servisi.html">
+<div class="card-img">
+<img alt="Tarsus klima servisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-klima-servisi-1.webp&lt;br&gt;Alt metin: Tarsus klima servisi&lt;/div&gt;'" src="../images/blog/tarsus-klima-servisi-1.webp"/>
+<span class="badge">Klima</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Klima Servisi</h3>
+<p>Soğutmuyor/ısıtmıyor mu? Servis, bakım ve gaz dolumu süreçleri için rehber.</p>
+<div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+</a>
+<!-- 12 (docx: Tarsus Klima Tamircisi) -->
+<a class="card" href="tarsus-klima-tamircisi.html">
+<div class="card-img">
+<img alt="Tarsus klima tamircisi" onerror="this.parentElement.innerHTML='&lt;div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-light);font-weight:900;text-align:center;padding:12px;&quot;&gt;[BURAYA_RESİM_EKLE]&lt;br&gt;Önerilen: images/blog/tarsus-klima-tamircisi-1.webp&lt;br&gt;Alt metin: Tarsus klima tamircisi&lt;/div&gt;'" src="../images/blog/tarsus-klima-tamircisi-1.webp"/>
+<span class="badge">Klima</span>
+</div>
+<div class="card-body">
+<h3>Tarsus Klima Tamircisi</h3>
+<p>Kart, fan, sensör ve kompresör arızalarında garantili onarım ve hızlı müdahale.</p>
+<div class="card-meta"><span><i class="fa-regular fa-calendar"></i> 3 Nis 2026</span><span>Oku <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+</a>
+</div>
+</div>
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div class="footer-top">
+<div class="footer-brand">
+<div class="footer-logo">
+<div class="footer-logo-icon"><i class="fa-solid fa-snowflake" style="color:white;font-size:20px;"></i>
+</div>
+<div class="footer-logo-text"><span>Sertler Soğutma</span><span>Teknik Servis</span></div>
+</div>
+<p>Her arızaya hızlı çözüm, her markaya uzman servis. Tarsus ve çevresinde güvenilir teknik servis
               adresiniz.</p>
-          </div>
-          <div class="footer-col">
-            <h5>Hizmetler</h5>
-            <ul>
-              <li>Klima Bakım &amp; Montaj</li>
-              <li>Klima Arıza &amp; Gaz Dolumu</li>
-              <li>Çamaşır Makinesi Tamiri</li>
-              <li>Bulaşık Makinesi Tamiri</li>
-              <li>Buzdolabı Tamiri</li>
-              <li>Derin Dondurucu Tamiri</li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h5>İletişim</h5>
-            <ul>
-              <li><a href="tel:+905305753253">0530 575 32 53</a></li>
-              <li><a href="https://wa.me/905305753253" target="_blank" rel="noopener">WhatsApp</a></li>
-              <li>Reşadiye Mah. 3005 Sokak No:5</li>
-              <li>Tarsus / Mersin</li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>© 2026 Sertler Soğutma Teknik Servis. Tüm hakları saklıdır.</p>
-          <p style="font-size:12px;color:rgba(255,255,255,0.3);">Serdar Sert — Kurucu &amp; Teknik Uzman · Tarsus /
+</div>
+<div class="footer-col">
+<h5>Hizmetler</h5>
+<ul>
+<li>Klima Bakım &amp; Montaj</li>
+<li>Klima Arıza &amp; Gaz Dolumu</li>
+<li>Çamaşır Makinesi Tamiri</li>
+<li>Bulaşık Makinesi Tamiri</li>
+<li>Buzdolabı Tamiri</li>
+<li>Derin Dondurucu Tamiri</li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>İletişim</h5>
+<ul>
+<li><a href="tel:+905305753253">0530 575 32 53</a></li>
+<li><a href="https://wa.me/905305753253" rel="noopener" target="_blank">WhatsApp</a></li>
+<li>Reşadiye Mah. 3005 Sokak No:5</li>
+<li>Tarsus / Mersin</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Sertler Soğutma Teknik Servis. Tüm hakları saklıdır.</p>
+<p style="font-size:12px;color:rgba(255,255,255,0.3);">Serdar Sert — Kurucu &amp; Teknik Uzman · Tarsus /
             Mersin
           </p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- FLOATING -->
-    <div class="float-btns">
-      <a href="https://wa.me/905305753253" target="_blank" rel="noopener" class="float-btn float-wa" title="WhatsApp"><i
-          class="fa-brands fa-whatsapp"></i></a>
-      <a href="tel:+905305753253" class="float-btn float-phone" title="Ara"><i class="fa-solid fa-phone"></i></a>
-    </div>
-
-    <script>
+</div>
+</div>
+</footer>
+<!-- FLOATING -->
+<div class="float-btns">
+<a class="float-btn float-wa" href="https://wa.me/905305753253" rel="noopener" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<a class="float-btn float-phone" href="tel:+905305753253" title="Ara"><i class="fa-solid fa-phone"></i></a>
+</div>
+<script>
       const darkModeToggleBtn = document.getElementById('darkModeToggle');
       const mobileHeaderDarkModeToggleBtn = document.getElementById('mobileHeaderDarkModeToggle');
 
@@ -1090,6 +1213,5 @@
         }
       });
     </script>
-</body>
-
+</div></body>
 </html>
