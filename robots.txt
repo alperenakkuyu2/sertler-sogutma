@@ -1,4 +1,9 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
+Disallow: /__pycache__/
+Disallow: /docx_files/
+Disallow: /*.py$
+Disallow: /*.md$
+Disallow: /SEO-Sistemi/
 
 Sitemap: https://www.sertlersogutma.com.tr/sitemap.xml
