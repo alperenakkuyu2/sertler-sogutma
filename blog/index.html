@@ -693,7 +693,325 @@
       background: var(--ice);
       color: white !important;
     }
-  </style>
+  
+    /* BLOG VIEW TABS & ACCORDION STYLES */
+    .blog-view-tabs-container {
+      margin: 36px 0 28px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .blog-view-tabs {
+      display: inline-flex;
+      background: var(--white);
+      border: 2px solid var(--ivory-2);
+      border-radius: 999px;
+      padding: 6px;
+      gap: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .view-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--text-mid);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+
+    .view-tab-btn i {
+      font-size: 15px;
+    }
+
+    .view-tab-btn .tab-badge {
+      font-size: 11px;
+      font-weight: 800;
+      background: rgba(74, 158, 191, 0.15);
+      color: var(--ice-dark);
+      padding: 3px 9px;
+      border-radius: 999px;
+      transition: all .25s;
+    }
+
+    .view-tab-btn:hover:not(.active) {
+      background: rgba(74, 158, 191, 0.08);
+      color: var(--anthracite);
+    }
+
+    .view-tab-btn.active {
+      background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(74, 158, 191, 0.4);
+    }
+
+    .view-tab-btn.active .tab-badge {
+      background: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+    }
+
+    #brandsView {
+      display: none;
+    }
+
+    .brand-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      background: var(--white);
+      border: 1px solid var(--ivory-2);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-search-box {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+      max-width: 440px;
+    }
+
+    .brand-search-box i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+    }
+
+    .brand-search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border-radius: 999px;
+      border: 1px solid var(--ivory-2);
+      background: var(--ivory);
+      color: var(--anthracite);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .brand-search-box input:focus {
+      border-color: var(--ice);
+    }
+
+    .brand-toolbar-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-accordion-action {
+      background: var(--ivory);
+      border: 1px solid var(--ivory-2);
+      color: var(--anthracite);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all .2s;
+    }
+
+    .btn-accordion-action:hover {
+      background: var(--ice);
+      color: white;
+      border-color: var(--ice);
+    }
+
+    .brand-accordion-card {
+      background: var(--white);
+      border: 1px solid var(--ivory-2);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      transition: border-color .25s, box-shadow .25s;
+      overflow: hidden;
+    }
+
+    .brand-accordion-card:hover {
+      border-color: rgba(74, 158, 191, 0.45);
+    }
+
+    .brand-accordion-card.open {
+      border-color: var(--ice);
+      box-shadow: var(--shadow);
+    }
+
+    .brand-accordion-head {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: background .2s;
+    }
+
+    .brand-accordion-head:hover {
+      background: rgba(74, 158, 191, 0.05);
+    }
+
+    .brand-head-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(74, 158, 191, 0.12);
+      color: var(--ice-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: transform .25s, background .25s, color .25s;
+    }
+
+    .brand-icon i {
+      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .brand-accordion-card.open .brand-icon i {
+      transform: rotate(90deg);
+    }
+
+    .brand-accordion-card.open .brand-icon {
+      background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .brand-name-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--anthracite);
+    }
+
+    .brand-badge {
+      font-size: 12px;
+      font-weight: 800;
+      background: var(--ivory-2);
+      color: var(--text-mid);
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: .3px;
+    }
+
+    .brand-accordion-card.open .brand-badge {
+      background: rgba(74, 158, 191, 0.15);
+      color: var(--ice-dark);
+    }
+
+    .brand-head-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-action-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 600px) {
+      .brand-action-text {
+        display: none;
+      }
+    }
+
+    .brand-chevron {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--ivory-2);
+      color: var(--anthracite);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), background .2s, color .2s;
+    }
+
+    .brand-accordion-card.open .brand-chevron {
+      transform: rotate(180deg);
+      background: var(--ice);
+      color: white;
+    }
+
+    .brand-accordion-content {
+      display: none;
+      padding: 4px 20px 24px;
+      border-top: 1px solid var(--ivory-2);
+    }
+
+    .brand-accordion-card.open .brand-accordion-content {
+      display: block;
+      animation: accordionFadeIn .25s ease-out;
+    }
+
+    @keyframes accordionFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .blog-view-tabs {
+        width: 100%;
+        flex-direction: column;
+        border-radius: var(--radius);
+      }
+      .view-tab-btn {
+        justify-content: center;
+        width: 100%;
+      }
+      .brand-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .brand-search-box {
+        max-width: 100%;
+      }
+      .brand-toolbar-actions {
+        justify-content: space-between;
+      }
+      .btn-accordion-action {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+
+</style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
@@ -795,12 +1113,33 @@
 </div>
 </a>
 </div>
-    <div class="section-head" style="margin-top: 40px; margin-bottom: 16px;">
-      <h2>Tüm Rehberler &amp; Blog Yazıları</h2>
-      <small>Faydalı Bilgiler</small>
+    
+    <!-- VIEW TABS -->
+    <div class="blog-view-tabs-container">
+      <div class="blog-view-tabs" role="tablist">
+        <button type="button" class="view-tab-btn active" id="tabBtnAll" onclick="switchBlogView('all')">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span class="tab-title">Tüm Yazılar (Tarihe Göre)</span>
+          <span class="tab-badge">51 Yazı</span>
+        </button>
+        <button type="button" class="view-tab-btn" id="tabBtnBrands" onclick="switchBlogView('brands')">
+          <i class="fa-solid fa-layer-group"></i>
+          <span class="tab-title">Markalara Göre İncele</span>
+          <span class="tab-badge">31 Kategori</span>
+        </button>
+      </div>
     </div>
-    <div class="grid">
-    <a class="card" href="tarsus-beyaz-esya-servisi.html">
+
+    <!-- VIEW 1: ALL POSTS CHRONOLOGICAL -->
+    <div id="allPostsView">
+      <div class="section-head" style="margin-top: 8px; margin-bottom: 20px;">
+        <div>
+          <h2 style="margin-bottom: 4px;">Tüm Rehberler &amp; Blog Yazıları</h2>
+          <small style="color: var(--text-mid); font-weight: 500;">En eski tarihten en yeniye doğru sıralanmıştır (51 Yazı)</small>
+        </div>
+      </div>
+      <div class="grid">
+<a class="card" href="tarsus-beyaz-esya-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Beyaz Esya Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya</span>
@@ -814,7 +1153,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-beyaz-esya-tamircisi.html">
+<a class="card" href="tarsus-beyaz-esya-tamircisi.html">
       <div class="card-img">
         <img alt="Arızalar Sizi Korkutmasın: Sertler Soğutma Tarsus Beyaz Eşya Tamircisi Bir Telefon Uzağınızda" src="../images/blog/tarsus-beyaz-esya-tamircisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya</span>
@@ -828,7 +1167,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-camasir-makinesi-servisi.html">
+<a class="card" href="tarsus-camasir-makinesi-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Camasir Makinesi Servisi" src="../images/blog/tarsus-camasir-makinesi-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya</span>
@@ -842,7 +1181,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-camasir-makinesi-tamircisi.html">
+<a class="card" href="tarsus-camasir-makinesi-tamircisi.html">
       <div class="card-img">
         <img alt="Tarsus Çamaşır Makinesi Tamircisi" src="../images/blog/tarsus-camasir-makinesi-tamircisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya</span>
@@ -856,7 +1195,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-bulasik-makinesi-servisi.html">
+<a class="card" href="tarsus-bulasik-makinesi-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Bulasik Makinesi Servisi" src="../images/blog/tarsus-bulasik-makinesi-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya</span>
@@ -870,7 +1209,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-bulasik-makinesi-tamircisi.html">
+<a class="card" href="tarsus-bulasik-makinesi-tamircisi.html">
       <div class="card-img">
         <img alt="Su Akıtma Derdine Son: Sertler Soğutma Tarsus Bulaşık Makinesi Tamircisi ile Hızlı ve Kalıcı Onarım!" src="../images/blog/tarsus-bulasik-makinesi-tamircisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya</span>
@@ -884,7 +1223,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-buzdolabi-servisi.html">
+<a class="card" href="tarsus-buzdolabi-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Buzdolabi Servisi" src="../images/blog/tarsus-buzdolabi-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya</span>
@@ -898,7 +1237,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-buzdolabi-tamircisi.html">
+<a class="card" href="tarsus-buzdolabi-tamircisi.html">
       <div class="card-img">
         <img alt="Soğutma Sorunlarına Kesin Çözüm: Sertler Soğutma Tarsus Buzdolabı Tamircisi ile Arızalara Elveda!" src="../images/blog/tarsus-buzdolabi-tamircisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya</span>
@@ -912,7 +1251,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-klima-bakim.html">
+<a class="card" href="tarsus-klima-bakim.html">
       <div class="card-img">
         <img alt="Sağlıklı Nefes Alın: Sertler Soğutma Tarsus Klima Bakımı ile Havayı Temizleyin, Faturaları Düşürün!" src="../images/blog/tarsus-klima-bakim-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -926,7 +1265,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-klima-montaj.html">
+<a class="card" href="tarsus-klima-montaj.html">
       <div class="card-img">
         <img alt="Doğru Yer, Doğru Montaj: Sertler Soğutma Tarsus Klima Montaj Hizmeti ile Verimliliği Garantileyin!" src="../images/blog/tarsus-klima-montaj-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -940,7 +1279,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-klima-servisi.html">
+<a class="card" href="tarsus-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Klima Servisi" src="../images/blog/tarsus-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -954,7 +1293,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-klima-tamircisi.html">
+<a class="card" href="tarsus-klima-tamircisi.html">
       <div class="card-img">
         <img alt="Yazın Sıcaktan Kışın Soğuktan Korunun: Sertler Soğutma Tarsus Klima Tamircisi ile Arızaları Unutun!" src="../images/blog/tarsus-klima-tamircisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -968,7 +1307,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-klimam-sogutmuyor.html">
+<a class="card" href="tarsus-klimam-sogutmuyor.html">
       <div class="card-img">
         <img alt="Tarsus'ta Klimanız Çalışıyor Ama Soğutmuyor mu? Nedenleri ve Hızlı Çözümü" src="../images/blog/tarsus-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -982,7 +1321,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-klima-su-damlatiyor.html">
+<a class="card" href="tarsus-klima-su-damlatiyor.html">
       <div class="card-img">
         <img alt="Tarsus Klima Su Akıtıyor (İç Üniteden Damlama) Nedenleri" src="../images/blog/tarsus-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -996,7 +1335,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-altus-klima-servisi.html">
+<a class="card" href="tarsus-altus-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Altus Klima Servisi" src="../images/blog/tarsus-altus-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1010,7 +1349,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-arcelik-klima-servisi.html">
+<a class="card" href="tarsus-arcelik-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Arcelik Klima Servisi" src="../images/blog/tarsus-arcelik-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1024,7 +1363,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-baymak-klima-servisi.html">
+<a class="card" href="tarsus-baymak-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Baymak Klima Servisi" src="../images/blog/tarsus-baymak-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1038,7 +1377,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-beko-klima-servisi.html">
+<a class="card" href="tarsus-beko-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Beko Klima Servisi" src="../images/blog/tarsus-beko-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1052,7 +1391,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-bosch-klima-servisi.html">
+<a class="card" href="tarsus-bosch-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Bosch Klima Servisi" src="../images/blog/tarsus-bosch-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1066,7 +1405,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-daikin-klima-servisi.html">
+<a class="card" href="tarsus-daikin-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Daikin Klima Servisi" src="../images/blog/tarsus-daikin-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1080,7 +1419,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-daylux-klima-servisi.html">
+<a class="card" href="tarsus-daylux-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Daylux Klima Servisi" src="../images/blog/tarsus-daylux-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1094,7 +1433,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-demirdokum-klima-servisi.html">
+<a class="card" href="tarsus-demirdokum-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Demirdokum Klima Servisi" src="../images/blog/tarsus-demirdokum-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1108,7 +1447,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-fujitsu-klima-servisi.html">
+<a class="card" href="tarsus-fujitsu-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Fujitsu Klima Servisi" src="../images/blog/tarsus-fujitsu-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1122,7 +1461,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-general-electric-klima-servisi.html">
+<a class="card" href="tarsus-general-electric-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus General Electric Klima Servisi" src="../images/blog/tarsus-general-electric-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1136,7 +1475,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-gree-klima-servisi.html">
+<a class="card" href="tarsus-gree-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Gree Klima Servisi" src="../images/blog/tarsus-gree-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1150,7 +1489,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-hitachi-klima-servisi.html">
+<a class="card" href="tarsus-hitachi-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Hitachi Klima Servisi" src="../images/blog/tarsus-hitachi-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1164,7 +1503,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-midea-klima-servisi.html">
+<a class="card" href="tarsus-midea-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Midea Klima Servisi" src="../images/blog/tarsus-midea-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1178,7 +1517,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-mitsubishi-klima-servisi.html">
+<a class="card" href="tarsus-mitsubishi-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Mitsubishi Klima Servisi" src="../images/blog/tarsus-mitsubishi-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1192,7 +1531,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-regal-klima-servisi.html">
+<a class="card" href="tarsus-regal-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Regal Klima Servisi" src="../images/blog/tarsus-regal-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1206,7 +1545,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-toshiba-klima-servisi.html">
+<a class="card" href="tarsus-toshiba-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Toshiba Klima Servisi" src="../images/blog/tarsus-toshiba-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1220,7 +1559,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-vestel-klima-servisi.html">
+<a class="card" href="tarsus-vestel-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Vestel Klima Servisi" src="../images/blog/tarsus-vestel-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1234,7 +1573,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-viessmann-klima-servisi.html">
+<a class="card" href="tarsus-viessmann-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Viessmann Klima Servisi" src="../images/blog/tarsus-viessmann-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1248,7 +1587,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-york-klima-servisi.html">
+<a class="card" href="tarsus-york-klima-servisi.html">
       <div class="card-img">
         <img alt="Tarsus York Klima Servisi" src="../images/blog/tarsus-york-klima-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1262,7 +1601,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-aeg-servisi.html">
+<a class="card" href="tarsus-aeg-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Aeg Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1276,7 +1615,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-altus-servisi.html">
+<a class="card" href="tarsus-altus-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Altus Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1290,7 +1629,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-arcelik-servisi.html">
+<a class="card" href="tarsus-arcelik-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Arcelik Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1304,7 +1643,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-ariston-servisi.html">
+<a class="card" href="tarsus-ariston-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Ariston Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1318,7 +1657,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-beko-servisi.html">
+<a class="card" href="tarsus-beko-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Beko Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1332,7 +1671,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-bosch-servisi.html">
+<a class="card" href="tarsus-bosch-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Bosch Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1346,7 +1685,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-electrolux-servisi.html">
+<a class="card" href="tarsus-electrolux-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Electrolux Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1360,7 +1699,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-hotpoint-servisi.html">
+<a class="card" href="tarsus-hotpoint-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Hotpoint Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1374,7 +1713,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-indesit-servisi.html">
+<a class="card" href="tarsus-indesit-servisi.html">
       <div class="card-img">
         <img alt="Tarsus İndesit Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1388,7 +1727,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-lg-servisi.html">
+<a class="card" href="tarsus-lg-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Lg Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya & Klima Servisi</span>
@@ -1402,7 +1741,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-midea-servisi.html">
+<a class="card" href="tarsus-midea-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Midea Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Klima Servisi</span>
@@ -1416,7 +1755,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-profilo-servisi.html">
+<a class="card" href="tarsus-profilo-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Profilo Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1430,7 +1769,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-regal-servisi.html">
+<a class="card" href="tarsus-regal-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Regal Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1444,7 +1783,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-samsung-servisi.html">
+<a class="card" href="tarsus-samsung-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Samsung Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya & Klima Servisi</span>
@@ -1458,7 +1797,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-seg-servisi.html">
+<a class="card" href="tarsus-seg-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Seg Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1472,7 +1811,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-siemens-servisi.html">
+<a class="card" href="tarsus-siemens-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Siemens Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1486,7 +1825,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-vestel-servisi.html">
+<a class="card" href="tarsus-vestel-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Vestel Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya & Klima Servisi</span>
@@ -1500,7 +1839,7 @@
         </div>
       </div>
     </a>
-    <a class="card" href="tarsus-westinghouse-servisi.html">
+<a class="card" href="tarsus-westinghouse-servisi.html">
       <div class="card-img">
         <img alt="Tarsus Westinghouse Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
         <span class="badge">Beyaz Eşya Servisi</span>
@@ -1514,10 +1853,1337 @@
         </div>
       </div>
     </a>
+      </div>
+    </div>
 
+    <!-- VIEW 2: BRAND ACCORDIONS -->
+    <div id="brandsView">
+      <div class="brand-toolbar">
+        <div class="brand-search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="brandSearchInput" placeholder="Marka veya kategori ara... (örn: Arçelik, Beko, Klima)" oninput="filterBrandAccordions()">
+        </div>
+        <div class="brand-toolbar-actions">
+          <button type="button" class="btn-accordion-action" onclick="toggleAllAccordions(true)"><i class="fa-solid fa-expand"></i> Hepsini Aç</button>
+          <button type="button" class="btn-accordion-action" onclick="toggleAllAccordions(false)"><i class="fa-solid fa-compress"></i> Hepsini Kapat</button>
+        </div>
+      </div>
+
+      <div id="brandEmptyNotice" style="display:none; text-align:center; padding: 42px 20px; background:var(--white); border-radius:var(--radius); border:1px solid var(--ivory-2); margin-bottom:20px;">
+        <i class="fa-solid fa-magnifying-glass" style="font-size:32px; color:var(--text-light); margin-bottom:12px; display:block;"></i>
+        <h3 style="font-size:18px; margin-bottom:6px; color:var(--anthracite);">Aradığınız marka bulunamadı</h3>
+        <p style="color:var(--text-mid); font-size:14px;">Lütfen farklı bir marka ismi deneyin veya "Tüm Yazılar" sekmesine göz atın.</p>
+      </div>
+
+      <div class="brand-accordions-list">
+
+    <div class="brand-accordion-card" id="acc-arcelik" data-brand="arçelik arcelik">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-arcelik')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Arçelik</span>
+            <span class="brand-badge">2 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-arcelik-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Arcelik Klima Servisi" src="../images/blog/tarsus-arcelik-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Arcelik Klima Servisi</h3>
+        <p>Arçelik klimanızın montaj, periyodik bakım ve arıza onarımlarında uzman teknik servis.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-arcelik-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Arcelik Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Arcelik Servisi</h3>
+        <p>Tarsus Arçelik Servisi ile tüm Arçelik beyaz eşya ve klimalarınızda profesyonel tamir, bakım ve 1 yıl parça garantili servis.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-beko" data-brand="beko beko">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-beko')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Beko</span>
+            <span class="brand-badge">2 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-beko-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Beko Klima Servisi" src="../images/blog/tarsus-beko-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Beko Klima Servisi</h3>
+        <p>Beko klimalarda kesintisiz serinlik, periyodik bakım ve 1 yıl garantili orijinal yedek parça.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-beko-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Beko Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Beko Servisi</h3>
+        <p>Tarsus Beko Servisi güvencesiyle Beko beyaz eşyalarınızda uzman onarım, orijinal yedek parça ve 7/24 kesintisiz teknik destek.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-bosch" data-brand="bosch bosch">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-bosch')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Bosch</span>
+            <span class="brand-badge">2 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-bosch-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Bosch Klima Servisi" src="../images/blog/tarsus-bosch-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Bosch Klima Servisi</h3>
+        <p>Bosch klimanızın ömrünü uzatacak ileri düzey bakım ve donanımlı arıza onarım hizmeti.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-bosch-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Bosch Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Bosch Servisi</h3>
+        <p>Tarsus Bosch Servisi ile buzdolabı, çamaşır ve bulaşık makinelerinde garantili onarım, orijinal yedek parça ve aynı gün teknik servis.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-vestel" data-brand="vestel vestel">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-vestel')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Vestel</span>
+            <span class="brand-badge">2 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-vestel-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Vestel Klima Servisi" src="../images/blog/tarsus-vestel-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Vestel Klima Servisi</h3>
+        <p>Vestel klimalarınızda üstün soğutma performansı, hızlı arıza onarımı ve 1 yıl parça garantisi.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 14 Temmuz 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-vestel-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Vestel Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya & Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Vestel Servisi</h3>
+        <p>Tarsus Vestel Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-samsung" data-brand="samsung samsung">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-samsung')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Samsung</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-samsung-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Samsung Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya & Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Samsung Servisi</h3>
+        <p>Tarsus Samsung Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-lg" data-brand="lg lg">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-lg')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">LG</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-lg-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Lg Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya & Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Lg Servisi</h3>
+        <p>Tarsus LG Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-siemens" data-brand="siemens siemens">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-siemens')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Siemens</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-siemens-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Siemens Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Siemens Servisi</h3>
+        <p>Tarsus Siemens Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-profilo" data-brand="profilo profilo">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-profilo')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Profilo</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-profilo-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Profilo Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Profilo Servisi</h3>
+        <p>Tarsus Profilo Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-regal" data-brand="regal regal">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-regal')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Regal</span>
+            <span class="brand-badge">2 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-regal-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Regal Klima Servisi" src="../images/blog/tarsus-regal-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Regal Klima Servisi</h3>
+        <p>Regal klima bakım, montaj, arıza onarımı ve gaz şarjı işlemlerinde hızlı ve ekonomik çözümler.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 14 Temmuz 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-regal-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Regal Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Regal Servisi</h3>
+        <p>Tarsus Regal Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-altus" data-brand="altus altus">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-altus')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Altus</span>
+            <span class="brand-badge">2 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-altus-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Altus Klima Servisi" src="../images/blog/tarsus-altus-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Altus Klima Servisi</h3>
+        <p>Altus klimalarınızda yüksek performans, profesyonel bakım ve orijinal parça garantili onarım.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-altus-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Altus Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Altus Servisi</h3>
+        <p>Tarsus Altus Servisi ile buzdolabı, çamaşır makinesi ve beyaz eşyalarınızda garantili onarım, orijinal yedek parça ve aynı gün servis hizmeti.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-daikin" data-brand="daikin daikin">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-daikin')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Daikin</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-daikin-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Daikin Klima Servisi" src="../images/blog/tarsus-daikin-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Daikin Klima Servisi</h3>
+        <p>Daikin inverter klimalarda performans artırıcı filtre bakımı ve elektronik kart onarımı.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-mitsubishi" data-brand="mitsubishi mitsubishi">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-mitsubishi')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Mitsubishi</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-mitsubishi-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Mitsubishi Klima Servisi" src="../images/blog/tarsus-mitsubishi-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Mitsubishi Klima Servisi</h3>
+        <p>Mitsubishi klimalar için profesyonel bakım, sessiz çalışma ayarları ve orijinal yedek parça desteği.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 14 Temmuz 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-midea" data-brand="midea midea">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-midea')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Midea</span>
+            <span class="brand-badge">2 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-midea-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Midea Klima Servisi" src="../images/blog/tarsus-midea-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Midea Klima Servisi</h3>
+        <p>Midea klimalarınızda yüksek enerji tasarrufu, detaylı filtre bakımı ve orijinal parça garantili teknik servis.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 14 Temmuz 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-midea-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Midea Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Midea Servisi</h3>
+        <p>Tarsus Midea Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-baymak" data-brand="baymak baymak">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-baymak')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Baymak</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-baymak-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Baymak Klima Servisi" src="../images/blog/tarsus-baymak-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Baymak Klima Servisi</h3>
+        <p>Baymak klima bakım, montaj, arıza ve gaz şarjı işlemlerinde hızlı ve garantili çözümler.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-demirdokum" data-brand="demirdöküm demirdokum">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-demirdokum')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Demirdöküm</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-demirdokum-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Demirdokum Klima Servisi" src="../images/blog/tarsus-demirdokum-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Demirdokum Klima Servisi</h3>
+        <p>Demirdöküm klima bakım, gaz dolumu ve montaj işlemlerinde Tarsus'un en hızlı servis ağı.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-toshiba" data-brand="toshiba toshiba">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-toshiba')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Toshiba</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-toshiba-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Toshiba Klima Servisi" src="../images/blog/tarsus-toshiba-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Toshiba Klima Servisi</h3>
+        <p>Toshiba inverter klimalarda kompresör koruma, arıza tespiti ve periyodik performans bakımı.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 14 Temmuz 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-gree" data-brand="gree gree">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-gree')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Gree</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-gree-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Gree Klima Servisi" src="../images/blog/tarsus-gree-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Gree Klima Servisi</h3>
+        <p>Gree klimalarda çevre dostu gaz şarjı, sızıntı kontrolü ve verimli çalışma garantisi.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-fujitsu" data-brand="fujitsu fujitsu">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-fujitsu')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Fujitsu</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-fujitsu-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Fujitsu Klima Servisi" src="../images/blog/tarsus-fujitsu-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Fujitsu Klima Servisi</h3>
+        <p>Fujitsu klimanızın enerji tüketimini düşüren periyodik bakım ve garantili motor tamiri.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-hitachi" data-brand="hitachi hitachi">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-hitachi')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Hitachi</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-hitachi-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Hitachi Klima Servisi" src="../images/blog/tarsus-hitachi-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Hitachi Klima Servisi</h3>
+        <p>Hitachi klimalar için balans ayarlı fan temizliği ve uzun ömürlü kompresör bakımı.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-viessmann" data-brand="viessmann viessmann">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-viessmann')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Viessmann</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-viessmann-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Viessmann Klima Servisi" src="../images/blog/tarsus-viessmann-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Viessmann Klima Servisi</h3>
+        <p>Viessmann klimalar için ileri düzey teknik bakım, montaj ve elektronik kart onarımı.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 14 Temmuz 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-york" data-brand="york york">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-york')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">York</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-york-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus York Klima Servisi" src="../images/blog/tarsus-york-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus York Klima Servisi</h3>
+        <p>York klimalarda gaz kaçak tespiti, fan yatakları yağlanması ve profesyonel arıza çözümleri.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 14 Temmuz 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-daylux" data-brand="daylux daylux">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-daylux')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Daylux</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-daylux-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Daylux Klima Servisi" src="../images/blog/tarsus-daylux-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Daylux Klima Servisi</h3>
+        <p>Daylux klimanızda su akıtma, yetersiz üfleme gibi tüm arızalara profesyonel müdahale.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-general-electric" data-brand="general electric general-electric">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-general-electric')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">General Electric</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-general-electric-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus General Electric Klima Servisi" src="../images/blog/tarsus-general-electric-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus General Electric Klima Servisi</h3>
+        <p>General electric klimaların arıza onarımında 7/24 nöbetçi acil teknik servis desteği.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 16 Haziran 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-seg" data-brand="seg seg">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-seg')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">SEG</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-seg-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Seg Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Seg Servisi</h3>
+        <p>Tarsus SEG Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-westinghouse" data-brand="westinghouse westinghouse">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-westinghouse')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Westinghouse</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-westinghouse-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Westinghouse Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Westinghouse Servisi</h3>
+        <p>Tarsus Westinghouse Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 19 Eylül 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-aeg" data-brand="aeg aeg">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-aeg')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">AEG</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-aeg-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Aeg Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Aeg Servisi</h3>
+        <p>Tarsus AEG Servisi olarak buzdolabı, çamaşır ve bulaşık makinesi tamiri, orijinal parça garantisi ve hızlı servis. Sertler Soğutma güvencesiyle 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-ariston" data-brand="ariston ariston">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-ariston')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Ariston</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-ariston-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Ariston Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Ariston Servisi</h3>
+        <p>Tarsus Ariston Servisi ile termosifon, buzdolabı, çamaşır ve bulaşık makinesi arızalarında güvenilir ve garantili tamir desteği.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-electrolux" data-brand="electrolux electrolux">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-electrolux')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Electrolux</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-electrolux-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Electrolux Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Electrolux Servisi</h3>
+        <p>Tarsus Electrolux Servisi ile İskandinav kalitesindeki beyaz eşyalarınızda uzman tamir, orijinal parça ve 1 yıl garanti.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-hotpoint" data-brand="hotpoint hotpoint">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-hotpoint')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Hotpoint</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-hotpoint-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Hotpoint Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Hotpoint Servisi</h3>
+        <p>Tarsus Hotpoint Servisi ile buzdolabı, çamaşır ve kurutma makinelerinizde profesyonel onarım, orijinal yedek parça ve aynı gün servis.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-indesit" data-brand="i̇ndesit indesit">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-indesit')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">İndesit</span>
+            <span class="brand-badge">1 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-indesit-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus İndesit Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus İndesit Servisi</h3>
+        <p>Tarsus İndesit Servisi güvencesiyle İndesit beyaz eşyalarınızda güvenilir tamir, orijinal parça ve hızlı servis desteği.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 21 Ağustos 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+    <div class="brand-accordion-card" id="acc-genel-rehberler" data-brand="genel rehberler genel-rehberler">
+      <button type="button" class="brand-accordion-head" onclick="toggleBrandAccordion('acc-genel-rehberler')" aria-expanded="false">
+        <div class="brand-head-left">
+          <div class="brand-icon"><i class="fa-solid fa-angle-right"></i></div>
+          <div class="brand-name-group">
+            <span class="brand-name">Genel Rehberler</span>
+            <span class="brand-badge">14 Blog Yazısı</span>
+          </div>
+        </div>
+        <div class="brand-head-right">
+          <span class="brand-action-text">Yazıları Gör</span>
+          <span class="brand-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+      </button>
+      <div class="brand-accordion-content">
+        <div class="grid" style="margin-top: 14px;">
+<a class="card" href="tarsus-beyaz-esya-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Beyaz Esya Servisi" src="../images/blog/tarsus-beyaz-esya-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Beyaz Esya Servisi</h3>
+        <p>Tarsus beyaz eşya servisi için Sertler Soğutma'yı tercih edin. Orijinal yedek parça, garantili onarım, uzman teknisyen ekibi. Aynı gün servis hizmeti.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 1 Haziran 2025</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-beyaz-esya-tamircisi.html">
+      <div class="card-img">
+        <img alt="Arızalar Sizi Korkutmasın: Sertler Soğutma Tarsus Beyaz Eşya Tamircisi Bir Telefon Uzağınızda" src="../images/blog/tarsus-beyaz-esya-tamircisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya</span>
+      </div>
+      <div class="card-body">
+        <h3>Arızalar Sizi Korkutmasın: Sertler Soğutma Tarsus Beyaz Eşya Tamircisi Bir Telefon Uzağınızda</h3>
+        <p>Tarsus beyaz eşya tamircisi için Sertler Soğutma'yı arayın. Orijinal yedek parça, garantili işçilik, aynı gün hızlı müdahale. 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 15 Haziran 2025</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-camasir-makinesi-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Camasir Makinesi Servisi" src="../images/blog/tarsus-camasir-makinesi-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Camasir Makinesi Servisi</h3>
+        <p>Tarsus çamaşır makinesi servisi için Sertler Soğutma'yı arayın. Orijinal yedek parça, garantili işçilik, aynı gün hızlı müdahale. 7/24 hizmet.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 1 Temmuz 2025</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-camasir-makinesi-tamircisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Çamaşır Makinesi Tamircisi" src="../images/blog/tarsus-camasir-makinesi-tamircisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Çamaşır Makinesi Tamircisi</h3>
+        <p>Tarsus çamaşır makinesi tamiri için Sertler Soğutma'yı arayın. Kazan, motor, pompa arızalarına uzman çözüm. Garantili işçilik, orijinal parça, aynı gün servis.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 2 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-bulasik-makinesi-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Bulasik Makinesi Servisi" src="../images/blog/tarsus-bulasik-makinesi-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Bulasik Makinesi Servisi</h3>
+        <p>Tarsus Bulaşık Makinesi servisi için Sertler Soğutma'yı arayın. Orijinal yedek parça, garantili işçilik, aynı gün hızlı müdahale. 7/24 destek.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 3 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-bulasik-makinesi-tamircisi.html">
+      <div class="card-img">
+        <img alt="Su Akıtma Derdine Son: Sertler Soğutma Tarsus Bulaşık Makinesi Tamircisi ile Hızlı ve Kalıcı Onarım!" src="../images/blog/tarsus-bulasik-makinesi-tamircisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya</span>
+      </div>
+      <div class="card-body">
+        <h3>Su Akıtma Derdine Son: Sertler Soğutma Tarsus Bulaşık Makinesi Tamircisi ile Hızlı ve Kalıcı Onarım!</h3>
+        <p>Tarsus bulaşık makinesi tamircisi arıyorsanız Sertler Soğutma ile su sızıntısı, pompa, rezistans ve kart arızalarına garantili hızlı çözüm alın.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 3 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-buzdolabi-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Buzdolabi Servisi" src="../images/blog/tarsus-buzdolabi-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Buzdolabi Servisi</h3>
+        <p>Tarsus buzdolabı servisi için Sertler Soğutma ile no-frost, gaz dolumu, termostat ve kompresör arızalarında garantili hızlı teknik destek alın.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 3 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-buzdolabi-tamircisi.html">
+      <div class="card-img">
+        <img alt="Soğutma Sorunlarına Kesin Çözüm: Sertler Soğutma Tarsus Buzdolabı Tamircisi ile Arızalara Elveda!" src="../images/blog/tarsus-buzdolabi-tamircisi-1.webp" loading="lazy"/>
+        <span class="badge">Beyaz Eşya</span>
+      </div>
+      <div class="card-body">
+        <h3>Soğutma Sorunlarına Kesin Çözüm: Sertler Soğutma Tarsus Buzdolabı Tamircisi ile Arızalara Elveda!</h3>
+        <p>Tarsus buzdolabı tamircisi arıyorsanız Sertler Soğutma ile gaz kaçağı, kompresör, fan, sensör ve kart arızalarında garantili hızlı çözüm alın.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 3 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-klima-bakim.html">
+      <div class="card-img">
+        <img alt="Sağlıklı Nefes Alın: Sertler Soğutma Tarsus Klima Bakımı ile Havayı Temizleyin, Faturaları Düşürün!" src="../images/blog/tarsus-klima-bakim-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Sağlıklı Nefes Alın: Sertler Soğutma Tarsus Klima Bakımı ile Havayı Temizleyin, Faturaları Düşürün!</h3>
+        <p>Tarsus klima bakımı için Sertler Soğutma ile filtre temizliği, ilaçlı dezenfeksiyon, performans artışı ve enerji tasarrufu sağlayan profesyonel bakım alın.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 3 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-klima-montaj.html">
+      <div class="card-img">
+        <img alt="Doğru Yer, Doğru Montaj: Sertler Soğutma Tarsus Klima Montaj Hizmeti ile Verimliliği Garantileyin!" src="../images/blog/tarsus-klima-montaj-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Doğru Yer, Doğru Montaj: Sertler Soğutma Tarsus Klima Montaj Hizmeti ile Verimliliği Garantileyin!</h3>
+        <p>Tarsus klima montaj hizmetinde Sertler Soğutma ile doğru konumlandırma, vakumlama, drenaj ve enerji verimli profesyonel kurulum çözümleri alın.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 3 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-klima-servisi.html">
+      <div class="card-img">
+        <img alt="Tarsus Klima Servisi" src="../images/blog/tarsus-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Klima Servisi</h3>
+        <p>Tarsus klima servisi için Sertler Soğutma ile bakım, arıza onarım, gaz dolumu ve performans analizi dahil profesyonel hızlı teknik destek alın.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 3 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-klima-tamircisi.html">
+      <div class="card-img">
+        <img alt="Yazın Sıcaktan Kışın Soğuktan Korunun: Sertler Soğutma Tarsus Klima Tamircisi ile Arızaları Unutun!" src="../images/blog/tarsus-klima-tamircisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Yazın Sıcaktan Kışın Soğuktan Korunun: Sertler Soğutma Tarsus Klima Tamircisi ile Arızaları Unutun!</h3>
+        <p>Tarsus klima tamircisi arıyorsanız Sertler Soğutma ile kart, fan, sensör, kompresör ve gaz kaçak arızalarında garantili hızlı çözüm alın.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 3 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-klimam-sogutmuyor.html">
+      <div class="card-img">
+        <img alt="Tarsus'ta Klimanız Çalışıyor Ama Soğutmuyor mu? Nedenleri ve Hızlı Çözümü" src="../images/blog/tarsus-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus'ta Klimanız Çalışıyor Ama Soğutmuyor mu? Nedenleri ve Hızlı Çözümü</h3>
+        <p>Tarsus'ta klima çalışıyor ama soğutmuyor şikayeti olanlar için evde yapılabilecek hızlı çözümler ve Sertler Soğutma profesyonel tamir servisi.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 6 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+<a class="card" href="tarsus-klima-su-damlatiyor.html">
+      <div class="card-img">
+        <img alt="Tarsus Klima Su Akıtıyor (İç Üniteden Damlama) Nedenleri" src="../images/blog/tarsus-klima-servisi-1.webp" loading="lazy"/>
+        <span class="badge">Klima Servisi</span>
+      </div>
+      <div class="card-body">
+        <h3>Tarsus Klima Su Akıtıyor (İç Üniteden Damlama) Nedenleri</h3>
+        <p>Klimanız iç üniteden su damlatıyor veya su mu akıtıyor? Tarsus klima su akıtıyor arızaları ve evde yapabileceğiniz pratik çözümler.</p>
+        <div class="card-meta">
+          <span><i class="fa-regular fa-calendar"></i> 6 Nisan 2026</span>
+          <span>Oku <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+        </div>
+      </div>
+    </div>
+      </div>
     </div>
   </div>
-  <!-- FOOTER -->
+<!-- FOOTER -->
 <footer>
 <div class="footer-inner">
 <div class="footer-top">
@@ -1601,5 +3267,88 @@
         }
       });
     </script>
-</div></body>
+</div>
+<script>
+  function switchBlogView(view) {
+    const tabAll = document.getElementById('tabBtnAll');
+    const tabBrands = document.getElementById('tabBtnBrands');
+    const allView = document.getElementById('allPostsView');
+    const brandsView = document.getElementById('brandsView');
+    
+    if (view === 'brands') {
+      tabAll.classList.remove('active');
+      tabBrands.classList.add('active');
+      allView.style.display = 'none';
+      brandsView.style.display = 'block';
+      localStorage.setItem('sertler_blog_view', 'brands');
+    } else {
+      tabBrands.classList.remove('active');
+      tabAll.classList.add('active');
+      brandsView.style.display = 'none';
+      allView.style.display = 'block';
+      localStorage.setItem('sertler_blog_view', 'all');
+    }
+  }
+
+  function toggleBrandAccordion(id) {
+    const card = document.getElementById(id);
+    if (card) {
+      const isOpening = !card.classList.contains('open');
+      card.classList.toggle('open');
+      const btn = card.querySelector('.brand-accordion-head');
+      if (btn) {
+        btn.setAttribute('aria-expanded', isOpening ? 'true' : 'false');
+      }
+    }
+  }
+
+  function toggleAllAccordions(open) {
+    const cards = document.querySelectorAll('.brand-accordion-card');
+    cards.forEach(card => {
+      if (open) {
+        card.classList.add('open');
+        const btn = card.querySelector('.brand-accordion-head');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+      } else {
+        card.classList.remove('open');
+        const btn = card.querySelector('.brand-accordion-head');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  function filterBrandAccordions() {
+    const input = document.getElementById('brandSearchInput');
+    const query = (input ? input.value : '').toLowerCase().trim();
+    const cards = document.querySelectorAll('.brand-accordion-card');
+    let visibleCount = 0;
+    
+    cards.forEach(card => {
+      const brandData = card.getAttribute('data-brand') || '';
+      if (!query || brandData.includes(query)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const emptyNotice = document.getElementById('brandEmptyNotice');
+    if (emptyNotice) {
+      emptyNotice.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  // Restore saved view preference
+  document.addEventListener('DOMContentLoaded', () => {
+    try {
+      const savedView = localStorage.getItem('sertler_blog_view');
+      if (savedView === 'brands') {
+        switchBlogView('brands');
+      }
+    } catch(e) {}
+  });
+</script>
+
+</body>
 </html>
