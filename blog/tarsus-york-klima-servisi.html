@@ -827,8 +827,8 @@
 
     /*  SIDEBAR  */
     .blog-sidebar {
-      position: relative;
-      will-change: transform;
+      position: sticky;
+      top: 96px;
     }
 
     .sidebar-card {
@@ -1209,6 +1209,7 @@
 
       .blog-sidebar {
         position: static;
+        margin-top: 0 !important;
       }
 
       .footer-top {
@@ -1712,74 +1713,81 @@
       const parent = sidebar.parentElement;
       if (!parent) return;
 
-      let currentY = 0;
-      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-      let ticking = false;
-
       const topOffset = 96;
       const bottomOffset = 24;
 
-      function updatePosition() {
+      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      let scrollDirection = 'down';
+
+      function initSidebar() {
         if (window.innerWidth <= 900) {
-          sidebar.style.transform = '';
-          ticking = false;
+          sidebar.style.top = '';
+          sidebar.style.marginTop = '0px';
           return;
         }
 
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
         const windowHeight = window.innerHeight;
         const sidebarHeight = sidebar.offsetHeight;
-        const parentRect = parent.getBoundingClientRect();
-        const parentTop = scrollY + parentRect.top;
-        const parentHeight = parent.offsetHeight;
-        const maxTranslate = Math.max(0, parentHeight - sidebarHeight - 40);
-
-        const delta = scrollY - lastScrollY;
 
         if (sidebarHeight + topOffset + bottomOffset <= windowHeight) {
-          if (scrollY + topOffset > parentTop) {
-            currentY = scrollY + topOffset - parentTop;
-          } else {
-            currentY = 0;
-          }
+          sidebar.style.top = topOffset + 'px';
+          sidebar.style.marginTop = '0px';
         } else {
-          if (delta > 0) {
-            const bottomInViewport = (parentTop + currentY + sidebarHeight) - scrollY;
-            if (bottomInViewport < windowHeight - bottomOffset) {
-              currentY = scrollY + windowHeight - bottomOffset - parentTop - sidebarHeight;
-            }
-          } else if (delta < 0) {
-            const topInViewport = (parentTop + currentY) - scrollY;
-            if (topInViewport > topOffset) {
-              currentY = scrollY + topOffset - parentTop;
-            }
-          }
+          sidebar.style.top = (windowHeight - sidebarHeight - bottomOffset) + 'px';
+          sidebar.style.marginTop = '0px';
+        }
+      }
+
+      function handleScroll() {
+        if (window.innerWidth <= 900) return;
+
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const delta = scrollY - lastScrollY;
+        if (delta === 0) return;
+
+        const newDirection = delta > 0 ? 'down' : 'up';
+        const windowHeight = window.innerHeight;
+        const sidebarHeight = sidebar.offsetHeight;
+
+        if (sidebarHeight + topOffset + bottomOffset <= windowHeight) {
+          sidebar.style.top = topOffset + 'px';
+          sidebar.style.marginTop = '0px';
+          lastScrollY = scrollY;
+          return;
         }
 
-        currentY = Math.max(0, Math.min(currentY, maxTranslate));
-        sidebar.style.transform = 'translate3d(0, ' + Math.round(currentY) + 'px, 0)';
+        const stickyBottomTop = windowHeight - sidebarHeight - bottomOffset;
+
+        if (newDirection !== scrollDirection) {
+          scrollDirection = newDirection;
+          const sidebarRect = sidebar.getBoundingClientRect();
+          const parentRect = parent.getBoundingClientRect();
+          const currentTopInParent = sidebarRect.top - parentRect.top;
+          const maxMarginTop = Math.max(0, parent.offsetHeight - sidebarHeight - 40);
+          const clampedMargin = Math.max(0, Math.min(currentTopInParent, maxMarginTop));
+
+          if (scrollDirection === 'up') {
+            sidebar.style.marginTop = clampedMargin + 'px';
+            sidebar.style.top = topOffset + 'px';
+          } else {
+            sidebar.style.marginTop = clampedMargin + 'px';
+            sidebar.style.top = stickyBottomTop + 'px';
+          }
+        }
 
         lastScrollY = scrollY;
-        ticking = false;
       }
 
-      function onScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(updatePosition);
-          ticking = true;
-        }
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('scroll', handleScroll, { passive: true });
       window.addEventListener('resize', () => {
-        currentY = 0;
-        updatePosition();
+        initSidebar();
+        scrollDirection = 'down';
       });
-      window.addEventListener('load', updatePosition);
+      window.addEventListener('load', initSidebar);
       if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        updatePosition();
+        initSidebar();
       } else {
-        document.addEventListener('DOMContentLoaded', updatePosition);
+        document.addEventListener('DOMContentLoaded', initSidebar);
       }
     })();
   </script>
