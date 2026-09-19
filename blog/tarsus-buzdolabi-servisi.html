@@ -254,15 +254,8 @@
     .faq-answer p { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin: 0; }
 
     .blog-sidebar {
-      position: sticky;
-      top: calc(100vh - var(--sidebar-h, 1250px) - 24px);
-      transition: top .1s ease-out;
-    }
-
-    @media (min-height: 1350px) {
-      .blog-sidebar {
-        top: 96px;
-      }
+      position: relative;
+      will-change: transform;
     }
     .sidebar-card { background: var(--white); border: 1px solid var(--ivory-2); border-radius: var(--radius); padding: 28px 24px; margin-bottom: 24px; }
     .sidebar-card h4 { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--ice-dark); margin-bottom: 20px; }
@@ -722,22 +715,80 @@
 
   <script>
     (function() {
-      function syncSidebarHeight() {
-        const sb = document.querySelector('.blog-sidebar');
-        if (sb) {
-          const h = sb.offsetHeight;
-          document.documentElement.style.setProperty('--sidebar-h', h + 'px');
+      const sidebar = document.querySelector('.blog-sidebar');
+      if (!sidebar) return;
+      const parent = sidebar.parentElement;
+      if (!parent) return;
+
+      let currentY = 0;
+      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      let ticking = false;
+
+      const topOffset = 96;
+      const bottomOffset = 24;
+
+      function updatePosition() {
+        if (window.innerWidth <= 900) {
+          sidebar.style.transform = '';
+          ticking = false;
+          return;
+        }
+
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const sidebarHeight = sidebar.offsetHeight;
+        const parentRect = parent.getBoundingClientRect();
+        const parentTop = scrollY + parentRect.top;
+        const parentHeight = parent.offsetHeight;
+        const maxTranslate = Math.max(0, parentHeight - sidebarHeight - 40);
+
+        const delta = scrollY - lastScrollY;
+
+        if (sidebarHeight + topOffset + bottomOffset <= windowHeight) {
+          if (scrollY + topOffset > parentTop) {
+            currentY = scrollY + topOffset - parentTop;
+          } else {
+            currentY = 0;
+          }
+        } else {
+          if (delta > 0) {
+            const bottomInViewport = (parentTop + currentY + sidebarHeight) - scrollY;
+            if (bottomInViewport < windowHeight - bottomOffset) {
+              currentY = scrollY + windowHeight - bottomOffset - parentTop - sidebarHeight;
+            }
+          } else if (delta < 0) {
+            const topInViewport = (parentTop + currentY) - scrollY;
+            if (topInViewport > topOffset) {
+              currentY = scrollY + topOffset - parentTop;
+            }
+          }
+        }
+
+        currentY = Math.max(0, Math.min(currentY, maxTranslate));
+        sidebar.style.transform = 'translate3d(0, ' + Math.round(currentY) + 'px, 0)';
+
+        lastScrollY = scrollY;
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(updatePosition);
+          ticking = true;
         }
       }
-      window.addEventListener('resize', syncSidebarHeight);
-      window.addEventListener('load', syncSidebarHeight);
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', () => {
+        currentY = 0;
+        updatePosition();
+      });
+      window.addEventListener('load', updatePosition);
       if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        syncSidebarHeight();
+        updatePosition();
       } else {
-        document.addEventListener('DOMContentLoaded', syncSidebarHeight);
+        document.addEventListener('DOMContentLoaded', updatePosition);
       }
-      setTimeout(syncSidebarHeight, 400);
-      setTimeout(syncSidebarHeight, 1200);
     })();
   </script>
 </body>
