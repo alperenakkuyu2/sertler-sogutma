@@ -1209,7 +1209,6 @@
 
       .blog-sidebar {
         position: static;
-        margin-top: 0 !important;
       }
 
       .footer-top {
@@ -1712,84 +1711,62 @@
     (function() {
       const sidebar = document.querySelector('.blog-sidebar');
       if (!sidebar) return;
-      const parent = sidebar.parentElement;
-      if (!parent) return;
 
       const topOffset = 96;
       const bottomOffset = 24;
 
       let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-      let scrollDirection = 'down';
+      let currentTop = topOffset;
 
-      function initSidebar() {
+      function updateSticky() {
         if (window.innerWidth <= 900) {
           sidebar.style.top = '';
-          sidebar.style.marginTop = '0px';
           return;
         }
 
-        const windowHeight = window.innerHeight;
-        const sidebarHeight = sidebar.offsetHeight;
-
-        if (sidebarHeight + topOffset + bottomOffset <= windowHeight) {
-          sidebar.style.top = topOffset + 'px';
-          sidebar.style.marginTop = '0px';
-        } else {
-          sidebar.style.top = (windowHeight - sidebarHeight - bottomOffset) + 'px';
-          sidebar.style.marginTop = '0px';
-        }
-      }
-
-      function handleScroll() {
-        if (window.innerWidth <= 900) return;
-
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        const delta = scrollY - lastScrollY;
-        if (delta === 0) return;
-
-        const newDirection = delta > 0 ? 'down' : 'up';
         const windowHeight = window.innerHeight;
         const sidebarHeight = sidebar.offsetHeight;
+        const delta = scrollY - lastScrollY;
+        lastScrollY = scrollY;
 
+        // If sidebar fits entirely on screen, lock to top
         if (sidebarHeight + topOffset + bottomOffset <= windowHeight) {
+          currentTop = topOffset;
           sidebar.style.top = topOffset + 'px';
-          sidebar.style.marginTop = '0px';
-          lastScrollY = scrollY;
           return;
         }
 
         const stickyBottomTop = windowHeight - sidebarHeight - bottomOffset;
 
-        if (newDirection !== scrollDirection) {
-          scrollDirection = newDirection;
-          const sidebarRect = sidebar.getBoundingClientRect();
-          const parentRect = parent.getBoundingClientRect();
-          const currentTopInParent = sidebarRect.top - parentRect.top;
-          const maxMarginTop = Math.max(0, parent.offsetHeight - sidebarHeight - 40);
-          const clampedMargin = Math.max(0, Math.min(currentTopInParent, maxMarginTop));
-
-          if (scrollDirection === 'up') {
-            sidebar.style.marginTop = clampedMargin + 'px';
-            sidebar.style.top = topOffset + 'px';
-          } else {
-            sidebar.style.marginTop = clampedMargin + 'px';
-            sidebar.style.top = stickyBottomTop + 'px';
-          }
+        // If user is at or near top of the page
+        if (scrollY <= 100) {
+          currentTop = topOffset;
+          sidebar.style.top = topOffset + 'px';
+          return;
         }
 
-        lastScrollY = scrollY;
+        // Adjust top by delta
+        currentTop = currentTop - delta;
+        // Clamp between stickyBottomTop (bottom limit) and topOffset (top limit)
+        currentTop = Math.max(stickyBottomTop, Math.min(topOffset, currentTop));
+
+        sidebar.style.top = currentTop + 'px';
       }
 
-      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('scroll', updateSticky, { passive: true });
       window.addEventListener('resize', () => {
-        initSidebar();
-        scrollDirection = 'down';
+        currentTop = topOffset;
+        updateSticky();
       });
-      window.addEventListener('load', initSidebar);
+      window.addEventListener('load', () => {
+        currentTop = topOffset;
+        updateSticky();
+      });
       if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        initSidebar();
+        updateSticky();
       } else {
-        document.addEventListener('DOMContentLoaded', initSidebar);
+        document.addEventListener('DOMContentLoaded', updateSticky);
       }
     })();
   </script>
