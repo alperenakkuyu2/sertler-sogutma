@@ -786,7 +786,14 @@
     /*  SIDEBAR  */
     .blog-sidebar {
       position: sticky;
-      top: 96px;
+      top: calc(100vh - var(--sidebar-h, 1250px) - 24px);
+      transition: top .1s ease-out;
+    }
+
+    @media (min-height: 1350px) {
+      .blog-sidebar {
+        top: 96px;
+      }
     }
 
     .sidebar-card {
@@ -1599,6 +1606,27 @@
       el.style.transition = 'opacity .5s ease, transform .5s ease';
       observer.observe(el);
     });
+  </script>
+
+  <script>
+    (function() {
+      function syncSidebarHeight() {
+        const sb = document.querySelector('.blog-sidebar');
+        if (sb) {
+          const h = sb.offsetHeight;
+          document.documentElement.style.setProperty('--sidebar-h', h + 'px');
+        }
+      }
+      window.addEventListener('resize', syncSidebarHeight);
+      window.addEventListener('load', syncSidebarHeight);
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        syncSidebarHeight();
+      } else {
+        document.addEventListener('DOMContentLoaded', syncSidebarHeight);
+      }
+      setTimeout(syncSidebarHeight, 500);
+      setTimeout(syncSidebarHeight, 1500);
+    })();
   </script>
 </body>
 </html>
